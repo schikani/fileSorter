@@ -8,8 +8,8 @@
 Voila! your files are sorted.
 
 #### Before:
-![alt text] (https://github.com/schikani/fileSorter.git/img/1.png)
-![alt text] (https://github.com/schikani/fileSorter.git/img/2.png)
+![alt text] https://github.com/schikani/fileSorter/blob/main/img/1.png
+![alt text] https://github.com/schikani/fileSorter/blob/main/img/2.png
 
 #### After:
-![alt text] (https://github.com/schikani/fileSorter.git/img/sorted.png)
+![alt text] https://github.com/schikani/fileSorter/blob/main/img/sorted.png
