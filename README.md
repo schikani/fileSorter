@@ -1,2 +1,15 @@
 # fileSorter
-fileSorter is a simple Python script that sorts the files according to their extensions and puts them in their respective folder
+### fileSorter is a simple Python script that sorts the files according to their extensions and puts them in their respective folder.
+
+1. `git clone https://github.com/schikani/fileSorter.git`
+2. `cd fileSorter`
+3. `python3 fileSorter.py path/to/directory`
+
+Voila! your files are sorted.
+
+#### Before:
+![alt text] (https://github.com/schikani/fileSorter.git/img/1.png)
+![alt text] (https://github.com/schikani/fileSorter.git/img/2.png)
+
+#### After:
+![alt text] (https://github.com/schikani/fileSorter.git/img/sorted.png)
