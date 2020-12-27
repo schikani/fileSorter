@@ -5,19 +5,11 @@
 2. `cd fileSorter`
 3. `python3 fileSorter.py path/to/directory`
 
-* ### Execute the script from anywhere (LINUX).
+* ### Execute the script from anywhere (UBUNTU).
 
-3. `chmod +x fileSorter.py`
-4. `mkdir ~/bin`
-5. `cp fileSorter.py ~/bin/fileSorter`
-6. `sudo echo 'export PATH=$PATH":$HOME/bin"' >> ~/.bashrc`
-7. `source ~/.bashrc`
-8. `fileSorter path/to/directory` 
-   
-OR
+* `bash install.sh`
+* `fileSorter path/to/directory` 
 
-* `cd path/to/directory`
-* `fileSorter .`
 
 #### Voila! your files are sorted.
 
