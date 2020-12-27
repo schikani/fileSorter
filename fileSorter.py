@@ -5,27 +5,27 @@ import shutil
 from sys import argv
 
 
+def folderName(name):
+    i = name.rfind(".") + 1
+    if i == 0:
+        folder_name = name
+    else:
+        folder_name = name[i:]
+
+    return folder_name
+
+
 def fileSorter(folder):
     sorted_folder = folder + "_sorted"
     os.mkdir(sorted_folder)
-    mkdir_ = set()
 
     for root, dir_, files in os.walk(folder):
         for f in files:
             try:
-                mkdir_.add(f.split(".")[1])
-            except IndexError:
-                mkdir_.add(f)
-
-    for m in mkdir_:
-        os.mkdir(os.path.join(sorted_folder, m))
-
-    for root, dir_, files in os.walk(folder):
-        for f in files:
-            try:
-                shutil.move(os.path.join(root, f), os.path.join(sorted_folder, f.split(".")[1]))
-            except IndexError:
-                shutil.move(os.path.join(root, f), os.path.join(sorted_folder, f))
+                os.mkdir(os.path.join(sorted_folder, folderName(f)))
+                shutil.move(os.path.join(root, f), os.path.join(sorted_folder, folderName(f)))
+            except FileExistsError:
+                shutil.move(os.path.join(root, f), os.path.join(sorted_folder, folderName(f)))
 
     shutil.rmtree(folder)
     os.rename(sorted_folder, folder)
