@@ -35,7 +35,8 @@ def fileSorter(folder):
 if __name__ == "__main__":
     argv_ = argv[1]
     if argv_ == ".":
-        argv_ = os.getcwd()
+        cwd = os.getcwd()
+        argv_ = cwd
     if argv_[-1] == "/":
         argv_ = argv_[:-1]
     fileSorter(argv_)
