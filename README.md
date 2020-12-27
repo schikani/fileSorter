@@ -19,6 +19,14 @@ OR
 * `cd path/to/directory`
 * `fileSorter .`
 
+1. `chmod +x fileSorter.py`
+2. `mkdir ~/bin`
+3. `cp fileSorter.py ~/bin/fileSorter`
+4. `sudo echo 'export PATH=$PATH":$HOME/bin"' >> ~/.bashrc`
+5. `source ~/.bashrc`
+6. `fileSorter path/to/directory` 
+
+
 #### Voila! your files are sorted.
 
 ### Before:
