@@ -10,7 +10,7 @@
 3. `chmod +x fileSorter.py`
 4. `mkdir ~/bin`
 5. `cp fileSorter.py ~/bin/fileSorter`
-6. `sudo echo 'export PATH=$PATH":$HOME/bin"' >> .bashrc`
+6. `sudo echo 'export PATH=$PATH":$HOME/bin"' >> ~/.bashrc`
 7. `source ~/.bashrc`
 8. `fileSorter path/to/directory` 
    
