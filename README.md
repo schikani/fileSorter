@@ -10,6 +10,8 @@
 * `bash install.sh`
 * `fileSorter path/to/directory` 
 
+### Add more than one folder as arguments.
+* `fileSorter path/to/directory1 path/to/directory2`
 
 #### Voila! your files are sorted.
 
