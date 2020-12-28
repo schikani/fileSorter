@@ -29,14 +29,14 @@ def fileSorter(folder):
 
     shutil.rmtree(folder)
     os.rename(sorted_folder, folder)
-    print("Done!")
 
 
 if __name__ == "__main__":
-    argv_ = argv[1]
-    if argv_ == ".":
-        cwd = os.getcwd()
-        argv_ = cwd
-    if argv_[-1] == "/":
-        argv_ = argv_[:-1]
-    fileSorter(argv_)
+    for arg in argv[1:]:
+        if arg == ".":
+            cwd = os.getcwd()
+            arg = cwd
+        if arg[-1] == "/":
+            arg = arg[:-1]
+        fileSorter(arg)
+        print(f"'{arg}' is sorted!")
