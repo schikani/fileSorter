@@ -5,7 +5,7 @@
 2. `cd fileSorter`
 3. `python3 fileSorter.py path/to/directory`
 
-### Execute the script from anywhere (UBUNTU).
+### Execute the script from anywhere (LINUX).
 
 * `bash install.sh`
 * `fileSorter path/to/directory` 
