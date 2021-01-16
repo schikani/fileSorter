@@ -77,10 +77,10 @@ class FileSorter:
                     i = f.rfind(".") + 1
 
                     if i == 0:
-                        folder_name = f
+                        folder_name = f.lower()
 
                     else:
-                        folder_name = f[i:]
+                        folder_name = f[i:].lower()
 
                     try:
                         folder_name = self.folderName(folder_name)
