@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # FILESORTER implementation generated from reading ui file 'qt5.ui'
 
 import json
@@ -497,7 +499,7 @@ class Ui_FILESORTER(object):
     def browse_btn_handler(self):
         self.browse_folder()
 
-    def browse_folder(self, file_dialog=None):
+    def browse_folder(self):
 
         file_dialog = QFileDialog()
         file_dialog.setFileMode(QFileDialog.DirectoryOnly)
@@ -513,6 +515,10 @@ class Ui_FILESORTER(object):
 
         if file_dialog.exec():
             paths = file_dialog.selectedFiles()
+            if len(paths) > 1:
+                if paths[0] in paths[1]:
+                    paths = paths[1:]
+            print(paths)
             return self.fileSorter(paths)
 
     @staticmethod
@@ -573,18 +579,28 @@ class Ui_FILESORTER(object):
                     shutil.rmtree(sorted_folder)
                     os.mkdir(sorted_folder)
 
+                x = _folder.rfind("/") + 1
+                if x != 0:
+                    _folder_name = _folder[x:]
+                if x == 0:
+                    x = _folder.rfind("\\")
+                    if x != 0:
+                        _folder_name = _folder[x:]
+                    else:
+                        _folder_name = _folder
+
                 files_completed = 0
                 n_files = 0
                 for root, dir_, files in os.walk(_folder):
                     for f in files:
                         n_files += 1
-                        i = f.rfind(".") + 1
+                        y = f.rfind(".") + 1
 
-                        if i == 0:
+                        if y == 0:
                             folder_name = f.lower()
 
                         else:
-                            folder_name = f[i:].lower()
+                            folder_name = f[y:].lower()
 
                         try:
                             folder_name = self.folderName(folder_name)
@@ -605,10 +621,10 @@ class Ui_FILESORTER(object):
                             files_completed += 1
 
                 self.progressBar.setProperty("value", files_completed / n_files * 100)
-                self.status_bar.setText("Sorted!")
+                self.status_bar.setText(f"'{_folder_name}' is sorted!")
                 shutil.rmtree(_folder)
                 os.rename(sorted_folder, _folder)
-                print(f"'{_folder}' is sorted!")
+                print(f"'{_folder_name}' is sorted!")
 
             else:
                 print(f"'{_folder}' does not exist!")
