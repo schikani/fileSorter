@@ -22,7 +22,8 @@
       "alac",
       "ogg",
       "raw",
-      "wma"
+      "wma",
+      "m4a"
     ],
     "Programming": [
       "py",
@@ -35,13 +36,28 @@
     ],
     "Document": [
       "pdf",
-      "docx",
       "doc",
+      "docx",
       "txt",
+      "xls",
+      "xlsm",
       "xlsx",
       "xml",
       "csv",
       "ipynb"
+    ],
+    "Compressed": [
+      "zip",
+      "rar",
+      "7z",
+      "arj",
+      "pkg",
+      "rpm",
+      "gz",
+      "z"
+    ],
+    "Executable": [
+      "exe"
     ]
   }
 
